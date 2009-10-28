@@ -3,7 +3,10 @@ use warnings;
 
 use Test::More tests => 1;
 use Test::Exception;
-use B::Deparse use lib '01-poc-lib';
+use B::Deparse;
+use FindBin;
+
+use lib "$FindBin::Bin/01-poc-lib";
 
 use Package::Strictures -for => { 'Example' => { 'STRICT' => 1, } };
 BEGIN { use_ok('Example'); }
