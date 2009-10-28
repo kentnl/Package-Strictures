@@ -56,6 +56,12 @@ See L<Package::Strictures::Register> for more detail.
 
 =cut
 
+=head1 MINOR WARNING
+
+This code is pretty fresh. Its been done to death with T.D.D., and does everything I want it to, but there's always bugs.
+
+=cut
+
 sub import {
   my ( $self, %params ) = @_;
   if ( not %params ) {
