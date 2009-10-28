@@ -3,8 +3,10 @@ use warnings;
 
 package Package::Strictures;
 
-# ABSTRACT: Facilitate toggling validation code at users request, without extra performance penalties.
+use Package::Strictures::Registry;
+use Carp ();
 
+# ABSTRACT: Facilitate toggling validation code at users request, without extra performance penalties.
 
 =head1 DESCRIPTION
 
@@ -53,6 +55,49 @@ benefits, but now, instead of never.
 
 =cut
 
+sub import {
+  my ( $self, %params ) = @_;
+  if ( not %params ) {
+    Carp::carp( __PACKAGE__ . ' called with no parameters, skipping magic' );
+    return;
+  }
+  if ( ( not exists $params{-for} ) && ( not exists $params{-from} ) ) {
+    Carp::croak( 'no -for or -from parameter to ' . __PACKAGE__ );
+  }
+  if ( exists $params{-for} ) {
+    $self->_setup_for( $params{-for} );
+    return;
+  }
+  if ( exists $params{-from} ) {
+    Carp::carp("-from is not implemented yet");
+    return;
+  }
+  Carp::croak("Ugh!?");
+}
+
+sub _setup_for {
+  my ( $self, $params ) = @_;
+  my $reftype = ref $params;
+  if ( $reftype ne 'HASH' ) {
+    Carp::croak("-for presently only takes HASH, got `$reftype`");
+  }
+  for my $package ( keys %{$params} ) {
+    $self->_setup_for_package( $params->{$package}, $package );
+  }
+  return;
+}
+
+sub _setup_for_package {
+  my ( $self, $params, $package ) = @_;
+  my $reftype = ref $params;
+  if ( $reftype ne 'HASH' ) {
+    Carp::croak("-for => { Some::Name => X } presently only takes HASH, got `$reftype` on package `$package` ");
+  }
+  for my $value ( keys %{$params} ) {
+    Package::Strictures::Registry->set_value( $package, $value, $params->{$value} );
+  }
+  return;
+}
 
 1;
 

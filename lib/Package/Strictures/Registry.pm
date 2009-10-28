@@ -58,10 +58,19 @@ sub has_value {
 
 sub get_value {
   my ( $self, $package, $name ) = @_;
-  if ( not $self->_has_value($package) ) {
+  if ( not $self->has_value($package, $name ) ) {
     Carp::croak("Error: package `$package` is not in the registry");
   }
   return $self->_get_package($package)->{$name};
+}
+
+sub set_value {
+  my ( $self, $package, $name, $value ) = @_;
+  if ( not $self->_has_package( $package ) ){
+    $self->_set_package( $package, {} );
+  }
+  $self->_get_package( $package )->{$name} = $value;
+  return;
 }
 
 no Moose;
