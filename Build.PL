@@ -14,6 +14,7 @@ my $build = Module::Build->new(
   ],
   requires      => {
     "Test::Exception" => '0.27',
+    "namespace::autoclean" => '0.9',
     "B::Deparse" => '0',
     "FindBin" => '0',
     "Carp" => '0',

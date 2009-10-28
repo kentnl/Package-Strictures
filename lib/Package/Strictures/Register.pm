@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 package Package::Strictures::Register;
-our $VERSION = '0.01000007';
+our $VERSION = '0.01000019';
 
 
 
@@ -118,7 +118,7 @@ Package::Strictures::Register - Create compile-time constants that can be tweake
 
 =head1 VERSION
 
-version 0.01000007
+version 0.01000019
 
 =head1 AUTHOR
 

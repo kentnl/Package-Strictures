@@ -11,13 +11,13 @@ name: Package-Strictures
 provides:
   Package::Strictures:
     file: lib/Package/Strictures.pm
-    version: 0.01000007
+    version: 0.01000019
   Package::Strictures::Register:
     file: lib/Package/Strictures/Register.pm
-    version: 0.01000007
+    version: 0.01000019
   Package::Strictures::Registry:
     file: lib/Package/Strictures/Registry.pm
-    version: 0.01000007
+    version: 0.01000019
 requires:
   B::Deparse: 0
   Carp: 0
@@ -27,6 +27,7 @@ requires:
   MooseX::ClassAttribute: 0.10
   Test::Exception: 0.27
   Test::More: 0
+  namespace::autoclean: 0.9
 resources:
   repository: http://github.com/kentfredric/Package-Strictures
-version: 0.01000007
+version: 0.01000019

@@ -9,11 +9,12 @@ WriteMakefile(
   NAME      => 'Package::Strictures',
   AUTHOR    => "Kent\ Fredric\ \<kentnl\@cpan\.org\>",
   ABSTRACT  => "Facilitate\ toggling\ validation\ code\ at\ users\ request\,\ without\ extra\ performance\ penalties\.",
-  VERSION   => '0.01000007',
+  VERSION   => '0.01000019',
   EXE_FILES => [ qw() ],
   (eval { ExtUtils::MakeMaker->VERSION(6.31) } ? (LICENSE => 'perl') : ()),
   PREREQ_PM    => {
     "Test::Exception" => '0.27',
+    "namespace::autoclean" => '0.9',
     "B::Deparse" => '0',
     "FindBin" => '0',
     "Carp" => '0',
