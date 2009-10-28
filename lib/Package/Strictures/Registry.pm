@@ -3,9 +3,10 @@ use warnings;
 
 package Package::Strictures::Registry;
 
-# ABSTRACT: Data Storage namespace for stricture parameters.
+# ABSTRACT: Data Storage name-space for stricture parameters.
 
 use Moose;
+use namespace::autoclean;
 use MooseX::ClassAttribute;
 use Carp ();
 
@@ -46,6 +47,7 @@ sub advertise_value {
   else {
     Carp::croak("` $package :: $name` is already advertised!");
   }
+  return;
 }
 
 sub has_value {
@@ -61,6 +63,8 @@ sub get_value {
   }
   return $self->_get_package($package)->{$name};
 }
+
+no Moose;
 
 __PACKAGE__->meta->make_immutable;
 1;

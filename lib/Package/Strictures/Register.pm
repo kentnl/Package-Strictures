@@ -12,12 +12,12 @@ use Carp                          ();
 sub import {
   my ( $self, %params ) = @_;
 
-  unless (%params) {
-    Carp::carp( __PACKAGE__ . " called with no parameters, skipping magic" );
+  if ( not %params ) {
+    Carp::carp( __PACKAGE__ . ' called with no parameters, skipping magic' );
     return;
   }
 
-  my (@caller) = caller();
+  my (@caller) = caller;
   my $package = $caller[0];
   $package = $params{-for} if exists $params{-for};
 
@@ -27,6 +27,7 @@ sub import {
 
   $self->_setup( $params{-setup}, $package );
 
+  return;
 }
 
 sub _setup {
@@ -51,6 +52,7 @@ sub _setup {
 
   $self->_setup_strictures( $params->{-strictures}, $package );
 
+  return;
 }
 
 sub _setup_strictures {
@@ -66,9 +68,12 @@ sub _setup_strictures {
 
     $self->_setup_stricture( $strictures->{$subname}, $package, $subname );
   }
+
+  return;
 }
 
 sub _setup_stricture {
+  ## no critic 'ProhibitNoStrict'
   my ( $self, $prototype, $package, $name ) = @_;
   if ( not exists $prototype->{default} ) {
     Carp::croak("Prototype for `$package`::`$name` lacks a [required] ->{'default'} ");
@@ -79,18 +84,21 @@ sub _setup_stricture {
   my $code = sub() { $value };
   {
     no strict 'refs';
-    *{ $package . '::' . $name } = $code;
+    *{ $package . q{::} . $name } = $code;
   }
+
+  return;
 }
 
 sub _advertise_stricture {
   my ( $self, $package, $name ) = @_;
   Package::Strictures::Registry->advertise_value( $package, $name );
+  return;
 }
 
 sub _fetch_stricture_value {
   my ( $self, $package, $name, $default ) = @_;
-  if( Package::Strictures::Registry->has_value( $package, $name ) ){
+  if ( Package::Strictures::Registry->has_value( $package, $name ) ) {
     return Package::Strictures::Registry->get_value( $package, $name );
   }
   return $default;
