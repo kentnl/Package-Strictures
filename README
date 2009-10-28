@@ -1,0 +1,70 @@
+NAME
+    Package::Strictures - Facilitate toggling validation code at users
+    request, without extra performance penalties.
+
+VERSION
+    version 0.01000007
+
+DESCRIPTION
+    Often, I find myself in a bind, where I have code I want to do things
+    properly, so it will detect of its own accord ( at run time ) misuses of
+    varying data-structures or methods, but the very same tools that would
+    be used to analyse and assure that things are going correctly, result in
+    substantial performance penalties.
+
+    This module, and the infrastructure I hope builds on top of it, may
+    hopefully provide an 'in' that lets me have the best of both worlds,
+    fast on the production server, and concise when trying to debug it (
+    that is, not having to manually desk-check the whole execution cycle
+    through various functions and modules just to find which level things
+    are going wrong at ).
+
+    In an ideal world, code would be both fast and concise, however, that is
+    a future fantasy, and this here instead aims to produce 80% of the same
+    benefits, but now, instead of never.
+
+SYNOPSIS
+  IMPLEMENTING MODULES
+      package Foo::Bar::Baz;
+    our $VERSION = '0.01000007';
+
+
+
+      use Package::Strictures::Register -setup => {
+          -strictures => {
+              STRICT => {
+                default => ''¸
+              },
+          },
+      };
+
+      if( STRICT ) {
+        /* Elimintated Code */
+      }
+
+    See Package::Strictures::Register for more detail.
+
+  CONSUMING USERS
+      use Package::Strictures -for => {
+        'Foo::Bar::Baz' => {
+          'STRICT' => 1,
+        },
+      };
+
+      use Foo::Bar::Baz;
+
+      /* Previously eliminated code now runs.
+
+MINOR WARNING
+    This code is pretty fresh. Its been done to death with T.D.D., and does
+    everything I want it to, but there's always bugs.
+
+AUTHOR
+    Kent Fredric <kentnl@cpan.org>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2009 by Kent Fredric.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+

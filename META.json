@@ -1,0 +1,42 @@
+{
+   "resources" : {
+      "repository" : "http://github.com/kentfredric/Package-Strictures"
+   },
+   "generated_by" : "Dist::Zilla version 1.092930",
+   "meta-spec" : {
+      "version" : 1.4,
+      "url" : "http://module-build.sourceforge.net/META-spec-v1.4.html"
+   },
+   "version" : "0.01000007",
+   "name" : "Package-Strictures",
+   "author" : [
+      "Kent Fredric <kentnl@cpan.org>"
+   ],
+   "license" : "perl",
+   "provides" : {
+      "Package::Strictures::Register" : {
+         "version" : "0.01000007",
+         "file" : "lib/Package/Strictures/Register.pm"
+      },
+      "Package::Strictures" : {
+         "version" : "0.01000007",
+         "file" : "lib/Package/Strictures.pm"
+      },
+      "Package::Strictures::Registry" : {
+         "version" : "0.01000007",
+         "file" : "lib/Package/Strictures/Registry.pm"
+      }
+   },
+   "requires" : {
+      "Test::Exception" : "0.27",
+      "B::Deparse" : "0",
+      "FindBin" : "0",
+      "Carp" : "0",
+      "Test::More" : "0",
+      "Config::INI::Reader" : "0.014",
+      "MooseX::ClassAttribute" : "0.10",
+      "Moose" : "0.92"
+   },
+   "abstract" : "Facilitate toggling validation code at users request, without extra performance penalties."
+}
+
