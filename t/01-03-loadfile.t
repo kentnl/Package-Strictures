@@ -7,7 +7,7 @@ use B::Deparse;
 use FindBin;
 use lib "$FindBin::Bin/01-poc-lib";
 
-use Package::Strictures -from => 'strictures.ini';
+use Package::Strictures -from => "$FindBin::Bin/strictures.ini";
 
 BEGIN { use_ok('Example'); }
 

@@ -69,10 +69,10 @@ sub import {
     return;
   }
   if ( exists $params{-from} ) {
-    Carp::carp("-from is not implemented yet");
+    $self->_setup_from( $params{-from} );
     return;
   }
-  Carp::croak("Ugh!?");
+  Carp::croak('Ugh!?');
 }
 
 sub _setup_for {
@@ -84,6 +84,31 @@ sub _setup_for {
   for my $package ( keys %{$params} ) {
     $self->_setup_for_package( $params->{$package}, $package );
   }
+  return;
+}
+
+sub _setup_from {
+  my ( $self, $from ) = @_;
+  my $reftype = ref $from;
+  if ($reftype) {
+    Carp::croak("-from can only take a scalar, not a ref, got `$reftype`");
+  }
+  if ( $from =~ qr{\.ini$} ) {
+    $self->_setup_from_ini($from);
+    return;
+  }
+  Carp::croak('Only know how to load setup from .ini files at present');
+  return;
+}
+
+sub _setup_from_ini {
+  my ( $self, $from ) = @_;
+  require Config::INI::Reader;
+  my ($conf) = Config::INI::Reader->read_file($from);
+  if ( exists $conf->{'_'} ) {
+    Carp::carp("Strictures not addressed at a package found in `$from`");
+  }
+  $self->_setup_for($conf);
   return;
 }
 
