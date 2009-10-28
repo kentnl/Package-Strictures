@@ -8,11 +8,11 @@ use Package::Strictures::Register -setup => {
   -strictures => {
     'STRICT' => {
       default => '',
-      type    => 'Bool',
-      'ENV'   => 'EXAMPLE_STRICT',
+      type    => 'Bool',              # NOT IMPLEMENTED OR TESTED
+      'ENV'   => 'EXAMPLE_STRICT',    # NOT IMPLEMENTED OR TESTED
     }
   },
-  -groups => {
+  -groups => {                        # NOT IMPLEMENTED OR TESTED
     '@all' => {
       doinstead => { STRICT => 1, },
       ENV       => 'EXAMPLE_STRICT_ALL',
