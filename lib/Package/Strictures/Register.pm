@@ -3,8 +3,9 @@ use warnings;
 
 package Package::Strictures::Register;
 
-use Sub::Install ();
-use Carp         ();
+use Package::Strictures::Registry ();
+use Sub::Install                  ();
+use Carp                          ();
 
 # ABSTRACT: Create compile-time constants that can be tweaked by users with Package::Strictures.
 
@@ -84,12 +85,14 @@ sub _setup_stricture {
 
 sub _advertise_stricture {
   my ( $self, $package, $name ) = @_;
-
+  Package::Strictures::Registry->advertise_value( $package, $name );
 }
 
 sub _fetch_stricture_value {
   my ( $self, $package, $name, $default ) = @_;
-
+  if( Package::Strictures::Registry->has_value( $package, $name ) ){
+    return Package::Strictures::Registry->get_value( $package, $name );
+  }
   return $default;
 }
 
