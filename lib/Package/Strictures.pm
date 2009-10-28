@@ -40,6 +40,8 @@ benefits, but now, instead of never.
     /* Elimintated Code */
   }
 
+See L<Package::Strictures::Register> for more detail.
+
 =head2 CONSUMING USERS
 
   use Package::Strictures -for => {
@@ -51,7 +53,6 @@ benefits, but now, instead of never.
   use Foo::Bar::Baz;
 
   /* Previously eliminated code now runs.
-
 
 =cut
 
