@@ -14,8 +14,8 @@ use Package::Strictures::Register -setup => {
   },
   -groups => {
     '@all' => {
-      members => [qw( STRICT )],
-      ENV     => 'EXAMPLE_STRICT_ALL',
+      doinstead => { STRICT => 1, },
+      ENV       => 'EXAMPLE_STRICT_ALL',
     }
   }
 };
