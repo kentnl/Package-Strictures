@@ -31,7 +31,7 @@ benefits, but now, instead of never.
   use Package::Strictures::Register -setup => {
       -strictures => {
           STRICT => {
-            default => ''¸
+            default => ''
           },
       },
   };
