@@ -3,7 +3,7 @@ NAME
     request, without extra performance penalties.
 
 VERSION
-    version 0.01000019
+    version 0.01001318
 
 DESCRIPTION
     Often, I find myself in a bind, where I have code I want to do things
@@ -26,14 +26,14 @@ DESCRIPTION
 SYNOPSIS
   IMPLEMENTING MODULES
       package Foo::Bar::Baz;
-    our $VERSION = '0.01000019';
+    our $VERSION = '0.01001318';
 
 
 
       use Package::Strictures::Register -setup => {
           -strictures => {
               STRICT => {
-                default => ''¸
+                default => ''
               },
           },
       };

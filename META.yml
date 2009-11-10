@@ -2,7 +2,7 @@
 abstract: 'Facilitate toggling validation code at users request, without extra performance penalties.'
 author:
   - 'Kent Fredric <kentnl@cpan.org>'
-generated_by: 'Dist::Zilla version 1.092930'
+generated_by: 'Dist::Zilla version 1.093140'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -11,13 +11,13 @@ name: Package-Strictures
 provides:
   Package::Strictures:
     file: lib/Package/Strictures.pm
-    version: 0.01000019
+    version: 0.01001318
   Package::Strictures::Register:
     file: lib/Package/Strictures/Register.pm
-    version: 0.01000019
+    version: 0.01001318
   Package::Strictures::Registry:
     file: lib/Package/Strictures/Registry.pm
-    version: 0.01000019
+    version: 0.01001318
 requires:
   B::Deparse: 0
   Carp: 0
@@ -27,7 +27,7 @@ requires:
   MooseX::ClassAttribute: 0.10
   Test::Exception: 0.27
   Test::More: 0
-  namespace::autoclean: 0.9
+  namespace::autoclean: 0.09
 resources:
   repository: http://github.com/kentfredric/Package-Strictures
-version: 0.01000019
+version: 0.01001318

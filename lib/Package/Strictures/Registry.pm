@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 package Package::Strictures::Registry;
-our $VERSION = '0.01000019';
+our $VERSION = '0.01001318';
 
 
 
@@ -95,7 +95,7 @@ Package::Strictures::Registry - Data Storage name-space for stricture parameters
 
 =head1 VERSION
 
-version 0.01000019
+version 0.01001318
 
 =head1 METHODS
 
