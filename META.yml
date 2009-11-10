@@ -11,13 +11,13 @@ name: Package-Strictures
 provides:
   Package::Strictures:
     file: lib/Package/Strictures.pm
-    version: 0.01001313
+    version: 0.01001314
   Package::Strictures::Register:
     file: lib/Package/Strictures/Register.pm
-    version: 0.01001313
+    version: 0.01001314
   Package::Strictures::Registry:
     file: lib/Package/Strictures/Registry.pm
-    version: 0.01001313
+    version: 0.01001314
 requires:
   B::Deparse: 0
   Carp: 0
@@ -30,4 +30,4 @@ requires:
   namespace::autoclean: 0.09
 resources:
   repository: http://github.com/kentfredric/Package-Strictures
-version: 0.01001313
+version: 0.01001314

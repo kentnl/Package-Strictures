@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 package Package::Strictures;
-our $VERSION = '0.01001313';
+our $VERSION = '0.01001314';
 
 
 
@@ -94,7 +94,7 @@ Package::Strictures - Facilitate toggling validation code at users request, with
 
 =head1 VERSION
 
-version 0.01001313
+version 0.01001314
 
 =head1 DESCRIPTION
 
@@ -115,14 +115,14 @@ benefits, but now, instead of never.
 =head2 IMPLEMENTING MODULES
 
   package Foo::Bar::Baz;
-our $VERSION = '0.01001313';
+our $VERSION = '0.01001314';
 
 
 
   use Package::Strictures::Register -setup => {
       -strictures => {
           STRICT => {
-            default => ''¸
+            default => ''
           },
       },
   };

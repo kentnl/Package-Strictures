@@ -1,7 +1,8 @@
 Revision history for Package-Strictures
 
-0.01001313 2009-11-10 17:49:54 UTC
+0.01001314 2009-11-10 18:09:11 UTC
           Backed NS::AC from 0.9 to 0.09 , that always gets me.
+          Nuked Strange Unicode in POD.
 
 0.01000019 2009-10-28 23:22:41 UTC
           Fixed Dependencies.
