@@ -8,18 +8,20 @@ use FindBin;
 use lib "$FindBin::Bin/01-poc-lib";
 
 use Package::Strictures -from => "$FindBin::Bin/strictures.ini";
-sub lives_and_is(&$$) { 
-    my ( $code, $expect, $desc ) = @_;
-    my $result = exception {
-        is( $code->(), $expect, $desc );
-    };
-    if ( $result ) { 
-        fail("died: $result");
-    }
+
+sub lives_and_is(&$$) {
+  my ( $code, $expect, $desc ) = @_;
+  my $result = exception {
+    is( $code->(), $expect, $desc );
+  };
+  if ($result) {
+    fail("died: $result");
+  }
 }
-sub dies_ok(&$){
-    my ( $code , $desc ) = @_ ;
-    ok(&exception($code), $desc);
+
+sub dies_ok(&$) {
+  my ( $code, $desc ) = @_;
+  ok( &exception($code), $desc );
 }
 BEGIN { use_ok('Example'); }
 
