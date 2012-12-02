@@ -50,22 +50,22 @@ sub pmver {
 
 eval { $v .= pmver('B::Deparse','any version') };
 eval { $v .= pmver('Carp','any version') };
-eval { $v .= pmver('Config::INI::Reader','any version') };
+eval { $v .= pmver('Config::INI::Reader','0.014') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','v1.6.0') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL::Lite','v1.3.0') };
 eval { $v .= pmver('File::Find','any version') };
 eval { $v .= pmver('File::Temp','any version') };
 eval { $v .= pmver('FindBin','any version') };
 eval { $v .= pmver('Module::Build','0.4003') };
-eval { $v .= pmver('Moose','any version') };
-eval { $v .= pmver('MooseX::ClassAttribute','any version') };
+eval { $v .= pmver('Moose','0.92') };
+eval { $v .= pmver('MooseX::ClassAttribute','0.10') };
 eval { $v .= pmver('Pod::Coverage::TrustPod','any version') };
 eval { $v .= pmver('Test::CPAN::Meta','any version') };
 eval { $v .= pmver('Test::Fatal','any version') };
 eval { $v .= pmver('Test::More','0.98') };
 eval { $v .= pmver('Test::Pod','1.41') };
 eval { $v .= pmver('Test::Pod::Coverage','1.08') };
-eval { $v .= pmver('namespace::autoclean','any version') };
+eval { $v .= pmver('namespace::autoclean','0.09') };
 eval { $v .= pmver('strict','any version') };
 eval { $v .= pmver('version','0.9901') };
 eval { $v .= pmver('warnings','any version') };
