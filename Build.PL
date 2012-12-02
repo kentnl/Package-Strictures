@@ -12,7 +12,7 @@ my %module_build_args = (
     "File::Temp" => 0,
     "FindBin" => 0,
     "Module::Build" => "0.4003",
-    "Test::Exception" => 0,
+    "Test::Fatal" => 0,
     "Test::More" => "0.98"
   },
   "configure_requires" => {

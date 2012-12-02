@@ -62,7 +62,7 @@
             "File::Find" : "0",
             "File::Temp" : "0",
             "FindBin" : "0",
-            "Test::Exception" : "0",
+            "Test::Fatal" : "0",
             "Test::More" : "0.98"
          }
       }
@@ -106,10 +106,11 @@
          "FindBin" : "1.51",
          "Module::Build" : "0.4003",
          "Moose" : "2.0604",
-         "MooseX::ClassAttribute" : "NA(possibly not installed)",
+         "MooseX::ClassAttribute" : "0.26",
          "Pod::Coverage::TrustPod" : "0.100002",
          "Test::CPAN::Meta" : "0.22",
          "Test::Exception" : "0.31",
+         "Test::Fatal" : "0.010",
          "Test::More" : "0.98",
          "Test::Pod" : "1.45",
          "Test::Pod::Coverage" : "1.08",

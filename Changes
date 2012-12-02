@@ -1,6 +1,44 @@
 Revision history for Package-Strictures
 
-0.01001319 2012-12-02T13:32:24Z
+0.01001319 2012-12-02T14:01:32Z
+ - Maintenance release.
+ 
+ [Tests]
+ - Removed Test::Exception based code in favour of Test::Fatal
+
+ [Packaging]
+ - bundle .perltidyrc
+ - move dist.ini to bundle-based config.
+ - Changes moved to CPAN::Changes format.
+ - Updated LICENSE copyright year.
+ - Updated LICENSE indentation.
+ - Updated LICENSE address.
+ - Moved author/release tests from t/ and put in xt/
+ 
+ [Tests::New]
+ - @install : 0000-report-versions-tiny.t
+ - @release : cpan-changes.t
+ - @release : eol.t
+ - @release : minimum-version.t
+
+ [Tests::Moved]
+ - t/author-critic.t -> xt/author/critic.t
+ - t/author-kwalitee -> xt/release/kwalitee.t
+ - t/release-meta-yaml.t -> xt/release/distmeta.t
+ - t/release-pod-coverage.t -> xt/release/pod-coverage.t
+ - t/release-pod-syntax.t -> xt/release/pod-syntax.t
+ 
+ [Dependencies::New / runtime requires ]
+  "Test::Exception" : "0.27",
+  "namespace::autoclean" : "0.09",
+  "B::Deparse" : "0",
+   "FindBin" : "0",
+-      "Carp" : "0",
+-      "Test::More" : "0",
+-      "Config::INI::Reader" : "0.014",
+-      "MooseX::ClassAttribute" : "0.10",
+-      "Moose" : "0.92"
+
 
 0.01001318 2009-11-10T22:49:10Z
  - Backed NS::AC from 0.9 to 0.09 , that always gets me.
