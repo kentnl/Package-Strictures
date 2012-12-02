@@ -41,6 +41,16 @@
  - added : File::Temp
  - added : File::Find
 
+ [Documentation]
+ - regenerated, which removes that annoying 'our $VERSION' from the
+   examples =p
+ - DESCRIPTION moved to after SYNOPSIS
+ - Copyright years updated.
+
+ [Internals]
+ - $VERSION declaration syntax updated
+ - All packages declare $AUTHORITY
+
  [Packaging]
  - bundle .perltidyrc
  - move dist.ini to bundle-based config.
@@ -49,6 +59,8 @@
  - Updated LICENSE indentation.
  - Updated LICENSE address.
  - Moved author/release tests from t/ and put in xt/
+ - update git metadata
+ - set bug tracker to github
 
  [Tests]
  - Removed Test::Exception based code in favour of Test::Fatal
