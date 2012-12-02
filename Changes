@@ -1,13 +1,13 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
-          Backed NS::AC from 0.9 to 0.09 , that always gets me.
-          Nuked Strange Unicode in POD.
-          Dropped MakeMaker.pl and just use MB
+ - Backed NS::AC from 0.9 to 0.09 , that always gets me.
+ - Nuked Strange Unicode in POD.
+ - Dropped MakeMaker.pl and just use MB
 
-0.01000019 2009-10-28 23:22:41 UTC
-          Fixed Dependencies.
+0.01000019 2009-10-28T23:22:41Z
+ - Fixed Dependencies.
 
-0.01000007 2009-10-28 11:49:12 UTC
-          First version.
+0.01000007 2009-10-28T11:49:12Z
+ - First version.
 
