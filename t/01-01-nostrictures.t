@@ -7,14 +7,14 @@ use B::Deparse;
 use FindBin;
 use lib "$FindBin::Bin/01-poc-lib";
 
-sub lives_and_is(&$$) { 
-    my ( $code, $expect, $desc ) = @_;
-    my $result = exception {
-        is( $code->(), $expect, $desc );
-    };
-    if ( $result ) { 
-        fail("died: $result");
-    }
+sub lives_and_is(&$$) {
+  my ( $code, $expect, $desc ) = @_;
+  my $result = exception {
+    is( $code->(), $expect, $desc );
+  };
+  if ($result) {
+    fail("died: $result");
+  }
 }
 
 BEGIN { use_ok('Example'); }
