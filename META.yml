@@ -30,14 +30,11 @@ provides:
     file: lib/Package/Strictures/Registry.pm
     version: 0.01001319
 requires:
-  B::Deparse: 0
   Carp: 0
-  Config::INI::Reader: 0.014
-  FindBin: 0
-  Moose: 0.92
-  MooseX::ClassAttribute: 0.10
-  Test::More: 0.98
-  namespace::autoclean: 0.09
+  Config::INI::Reader: 0
+  Moose: 0
+  MooseX::ClassAttribute: 0
+  namespace::autoclean: 0
   perl: 5.006
   strict: 0
   warnings: 0
@@ -288,14 +285,6 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Twitter
       name: '@Author::KENTNL/Twitter'
       version: 0.017
-    -
-      class: Dist::Zilla::Plugin::Prereqs
-      config:
-        Dist::Zilla::Plugin::Prereqs:
-          phase: runtime
-          type: requires
-      name: Prereqs
-      version: 4.300028
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
