@@ -35,7 +35,6 @@ my %module_build_args = (
     "FindBin" => 0,
     "Moose" => "0.92",
     "MooseX::ClassAttribute" => "0.10",
-    "Test::Exception" => "0.27",
     "Test::More" => "0.98",
     "namespace::autoclean" => "0.09",
     "perl" => "5.006",
