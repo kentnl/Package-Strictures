@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.01001318 2009-11-10T22:49:10Z
  - Backed NS::AC from 0.9 to 0.09 , that always gets me.
  - Nuked Strange Unicode in POD.
  - Dropped MakeMaker.pl and just use MB
