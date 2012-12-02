@@ -1,0 +1,24 @@
+do{ my $x = {
+       'build_requires' => {
+                             'Test::More' => '0.98',
+                             'FindBin' => 0,
+                             'File::Find' => 0,
+                             'B::Deparse' => 0,
+                             'File::Temp' => 0,
+                             'Test::Fatal' => 0,
+                             'Module::Build' => '0.4003'
+                           },
+       'conflicts' => {},
+       'requires' => {
+                       'warnings' => 0,
+                       'namespace::autoclean' => '0.09',
+                       'Carp' => 0,
+                       'perl' => '5.006',
+                       'strict' => 0,
+                       'Config::INI::Reader' => '0.014',
+                       'MooseX::ClassAttribute' => '0.10',
+                       'Moose' => '0.92'
+                     },
+       'recommends' => {}
+     };
+$x; }

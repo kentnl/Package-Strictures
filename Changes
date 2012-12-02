@@ -1,13 +1,91 @@
-Revision history for Package-Strictures
+﻿Revision history for Package-Strictures
 
-0.01001318 2009-11-10 22:49:10 UTC
-          Backed NS::AC from 0.9 to 0.09 , that always gets me.
-          Nuked Strange Unicode in POD.
-          Dropped MakeMaker.pl and just use MB
+0.01001319 2012-12-02T14:23:20Z
+ - Maintenance release.
 
-0.01000019 2009-10-28 23:22:41 UTC
-          Fixed Dependencies.
+ [Dependencies / build requires]
+ - added : Module::Build 0.4003
 
-0.01000007 2009-10-28 11:49:12 UTC
-          First version.
+ [Dependencies / configure requires]
+ - added : Module::Build 0.4003
+
+ [Dependencies / develop recommends]
+ - added : Dist::Zilla::PluginBundle::Author::KENTNL::Lite v1.3.0
+
+ [Dependencies / develop requires]
+ - added : Dist::Zilla::PluginBundle::Author::KENTNL::Lite
+ - added : Pod::Coverage::TrustPod
+ - added : Test::CPAN::Meta
+ - added : Test::Pod 1.41
+ - added : Test::Pod::Coverage 1.08
+ - added : version 0.9901
+
+ [Dependencies / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.6.0
+
+ [Dependencies / runtime requires]
+ - removed : Test::Exception
+ - moved to @test requires : Test::More
+ - moved to @test requires : FindBin
+ - moved to @test requires : B::Deparse
+ - added : perl 5.006
+ - added : warnings
+ - added : strict
+
+ [Dependencies / test requires]
+ - moved from @runtime requires : B::Deparse
+ - moved from @runtime requires : FindBin
+ - moved from @runtime requires : Test::More
+ - changed : Test::More 0 -> 0.98
+ - added : Test::Fatal
+ - added : File::Temp
+ - added : File::Find
+
+ [Documentation]
+ - regenerated, which removes that annoying 'our $VERSION' from the
+   examples =p
+ - DESCRIPTION moved to after SYNOPSIS
+ - Copyright years updated.
+
+ [Internals]
+ - $VERSION declaration syntax updated
+ - All packages declare $AUTHORITY
+
+ [Packaging]
+ - bundle .perltidyrc
+ - move dist.ini to bundle-based config.
+ - Changes moved to CPAN::Changes format.
+ - Updated LICENSE copyright year.
+ - Updated LICENSE indentation.
+ - Updated LICENSE address.
+ - Moved author/release tests from t/ and put in xt/
+ - update git metadata
+ - set bug tracker to github
+
+ [Tests]
+ - Removed Test::Exception based code in favour of Test::Fatal
+
+ [Tests::Moved]
+ - t/author-critic.t -> xt/author/critic.t
+ - t/author-kwalitee -> xt/release/kwalitee.t
+ - t/release-meta-yaml.t -> xt/release/distmeta.t
+ - t/release-pod-coverage.t -> xt/release/pod-coverage.t
+ - t/release-pod-syntax.t -> xt/release/pod-syntax.t
+
+ [Tests::New]
+ - @install : 0000-report-versions-tiny.t
+ - @release : cpan-changes.t
+ - @release : eol.t
+ - @release : minimum-version.t
+
+0.01001318 2009-11-10T22:49:10Z
+ - Backed NS::AC from 0.9 to 0.09 , that always gets me.
+ - Nuked Strange Unicode in POD.
+ - Dropped MakeMaker.pl and just use MB
+
+0.01000019 2009-10-28T23:22:41Z
+ - Fixed Dependencies.
+
+0.01000007 2009-10-28T11:49:12Z
+ - First version.
 

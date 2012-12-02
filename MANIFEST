@@ -1,3 +1,4 @@
+.perltidyrc
 Build.PL
 Changes
 LICENSE
@@ -11,13 +12,17 @@ lib/Package/Strictures/Register.pm
 lib/Package/Strictures/Registry.pm
 perlcriticrc
 t/00-compile.t
+t/000-report-versions-tiny.t
 t/01-01-nostrictures.t
 t/01-02-strictures.t
 t/01-03-loadfile.t
 t/01-poc-lib/Example.pm
-t/author-critic.t
-t/author-kwalitee.t
-t/release-meta-yaml.t
-t/release-pod-coverage.t
-t/release-pod-syntax.t
 t/strictures.ini
+xt/author/critic.t
+xt/release/cpan-changes.t
+xt/release/distmeta.t
+xt/release/eol.t
+xt/release/kwalitee.t
+xt/release/minimum-version.t
+xt/release/pod-coverage.t
+xt/release/pod-syntax.t
