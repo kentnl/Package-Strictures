@@ -111,10 +111,7 @@ my $static_prereqs = do { my $x = {
                                       'Carp' => '0',
                                       'Config::INI::Reader' => '0.014',
                                       'Import::Into' => '0',
-                                      'Moose' => '0.92',
-                                      'MooseX::ClassAttribute' => '0.10',
                                       'constant' => '0',
-                                      'namespace::autoclean' => '0.09',
                                       'perl' => '5.006',
                                       'strict' => '0',
                                       'warnings' => '0'
@@ -136,7 +133,7 @@ my $static_prereqs = do { my $x = {
                                    'Test::Fatal' => '0',
                                    'Test::More' => '0.89',
                                    'lib' => '0',
-                                   'namespace::autoclean' => '0.09',
+                                   'namespace::autoclean' => '0',
                                    'version' => '0'
                                  }
                  }
