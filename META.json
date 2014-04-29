@@ -104,7 +104,7 @@
             "Test::Fatal" : "0",
             "Test::More" : "0.89",
             "lib" : "0",
-            "namespace::autoclean" : "0",
+            "namespace::clean" : "0",
             "version" : "0"
          }
       }
@@ -201,7 +201,7 @@
          "Test::Pod::Coverage" : "1.08",
          "constant" : "1.31",
          "lib" : "0.63",
-         "namespace::autoclean" : "0.15",
+         "namespace::clean" : "0.25",
          "strict" : "1.08",
          "version" : "0.9908",
          "warnings" : "1.23"

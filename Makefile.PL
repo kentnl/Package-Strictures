@@ -37,7 +37,7 @@ my %WriteMakefileArgs = (
     "Test::Fatal" => 0,
     "Test::More" => "0.89",
     "lib" => 0,
-    "namespace::autoclean" => 0,
+    "namespace::clean" => 0,
     "version" => 0
   },
   "VERSION" => "1.000000",
@@ -60,7 +60,7 @@ my %FallbackPrereqs = (
   "Test::More" => "0.89",
   "constant" => 0,
   "lib" => 0,
-  "namespace::autoclean" => 0,
+  "namespace::clean" => 0,
   "strict" => 0,
   "version" => 0,
   "warnings" => 0
