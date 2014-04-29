@@ -2,13 +2,7 @@ use strict;
 use warnings;
 
 package Package::Strictures::Registry;
-BEGIN {
-  $Package::Strictures::Registry::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Package::Strictures::Registry::VERSION = '0.01001319';
-}
-
+$Package::Strictures::Registry::VERSION = '1.000000';
 # ABSTRACT: Data Storage name-space for stricture parameters.
 
 use Moose;
@@ -43,6 +37,17 @@ class_has '_advertisments' => (
 );
 
 
+
+
+
+
+
+
+
+
+
+
+
 sub advertise_value {
   my ( $self, $package, $name ) = @_;
   if ( not $self->_has_advert($package) ) {
@@ -58,11 +63,29 @@ sub advertise_value {
 }
 
 
+
+
+
+
+
+
+
+
+
 sub has_value {
   my ( $self, $package, $name ) = @_;
   return unless ( $self->_has_package($package) );
   return exists $self->_get_package($package)->{$name};
 }
+
+
+
+
+
+
+
+
+
 
 
 sub get_value {
@@ -72,6 +95,15 @@ sub get_value {
   }
   return $self->_get_package($package)->{$name};
 }
+
+
+
+
+
+
+
+
+
 
 
 sub set_value {
@@ -92,13 +124,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Package::Strictures::Registry - Data Storage name-space for stricture parameters.
 
 =head1 VERSION
 
-version 0.01001319
+version 1.000000
 
 =head1 METHODS
 
@@ -140,7 +174,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Kent Fredric.
+This software is copyright (c) 2014 by Kent Fredric.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

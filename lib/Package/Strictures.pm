@@ -2,17 +2,63 @@ use strict;
 use warnings;
 
 package Package::Strictures;
-BEGIN {
-  $Package::Strictures::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Package::Strictures::VERSION = '0.01001319';
-}
-
+$Package::Strictures::VERSION = '1.000000';
 use Package::Strictures::Registry;
 use Carp ();
 
 # ABSTRACT: Facilitate toggling validation code at users request, without extra performance penalties.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -91,13 +137,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Package::Strictures - Facilitate toggling validation code at users request, without extra performance penalties.
 
 =head1 VERSION
 
-version 0.01001319
+version 1.000000
 
 =head1 SYNOPSIS
 
@@ -155,7 +203,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Kent Fredric.
+This software is copyright (c) 2014 by Kent Fredric.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

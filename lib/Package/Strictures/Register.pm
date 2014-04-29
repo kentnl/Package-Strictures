@@ -2,13 +2,7 @@ use strict;
 use warnings;
 
 package Package::Strictures::Register;
-BEGIN {
-  $Package::Strictures::Register::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Package::Strictures::Register::VERSION = '0.01001319';
-}
-
+$Package::Strictures::Register::VERSION = '1.000000';
 use Package::Strictures::Registry ();
 use Carp                          ();
 
@@ -85,12 +79,11 @@ sub _setup_stricture {
   }
 
   $self->_advertise_stricture( $package, $name );
-  my $value = $self->_fetch_stricture_value( $package, $name, $prototype->{default} );
-  my $code = sub() { $value };
-  {
-    no strict 'refs';
-    *{ $package . q{::} . $name } = $code;
-  }
+
+  require Import::Into;
+  require constant;
+
+  constant->import::into( $package, $name, $self->_fetch_stricture_value( $package, $name, $prototype->{default} ) );
 
   return;
 }
@@ -115,13 +108,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Package::Strictures::Register - Create compile-time constants that can be tweaked by users with Package::Strictures.
 
 =head1 VERSION
 
-version 0.01001319
+version 1.000000
 
 =head1 AUTHOR
 
@@ -129,7 +124,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Kent Fredric.
+This software is copyright (c) 2014 by Kent Fredric.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
