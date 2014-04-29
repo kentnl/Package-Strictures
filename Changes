@@ -1,6 +1,6 @@
 ﻿Revision history for Package-Strictures
 
-1.000000 2014-04-29T07:36:05Z
+1.000000 2014-04-29T07:38:44Z
  [00 Minor]
  - A few minor implementation/dependency changes
  - Packaging changes that might be important for downstreams repackaging by

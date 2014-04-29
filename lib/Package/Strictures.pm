@@ -3,10 +3,12 @@ use warnings;
 
 package Package::Strictures;
 $Package::Strictures::VERSION = '1.000000';
+# ABSTRACT: Facilitate toggling validation code at users request, without extra performance penalties.
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
 use Package::Strictures::Registry;
 use Carp ();
-
-# ABSTRACT: Facilitate toggling validation code at users request, without extra performance penalties.
 
 
 

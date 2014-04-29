@@ -5,6 +5,8 @@ package Package::Strictures::Registry;
 $Package::Strictures::Registry::VERSION = '1.000000';
 # ABSTRACT: Data Storage name-space for stricture parameters.
 
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
 use Moose;
 use namespace::autoclean;
 use MooseX::ClassAttribute;

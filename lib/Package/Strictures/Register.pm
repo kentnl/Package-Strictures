@@ -3,10 +3,12 @@ use warnings;
 
 package Package::Strictures::Register;
 $Package::Strictures::Register::VERSION = '1.000000';
+# ABSTRACT: Create compile-time constants that can be tweaked by users with Package::Strictures.
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
 use Package::Strictures::Registry ();
 use Carp                          ();
-
-# ABSTRACT: Create compile-time constants that can be tweaked by users with Package::Strictures.
 
 sub import {
   my ( $self, %params ) = @_;
