@@ -5,6 +5,8 @@ package Package::Strictures::Registry;
 
 # ABSTRACT: Data Storage name-space for stricture parameters.
 
+# AUTHORITY
+
 use Moose;
 use namespace::autoclean;
 use MooseX::ClassAttribute;

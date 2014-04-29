@@ -3,10 +3,12 @@ use warnings;
 
 package Package::Strictures;
 
+# ABSTRACT: Facilitate toggling validation code at users request, without extra performance penalties.
+
+# AUTHORITY
+
 use Package::Strictures::Registry;
 use Carp ();
-
-# ABSTRACT: Facilitate toggling validation code at users request, without extra performance penalties.
 
 =head1 DESCRIPTION
 
