@@ -7,36 +7,41 @@ $Package::Strictures::Registry::VERSION = '1.000000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
-use Moose;
-use namespace::autoclean;
-use MooseX::ClassAttribute;
 use Carp ();
 
-class_has '_registry_store' => (
-  isa      => 'HashRef[ HashRef ]',
-  init_arg => undef,
-  is       => 'bare',
-  default  => sub { +{} },
-  traits   => [qw( Hash )],
-  handles  => {
-    _has_package => 'exists',
-    _set_package => 'set',
-    _get_package => 'get',
-  },
-);
+my $_registry_store = {};
 
-class_has '_advertisments' => (
-  isa      => 'HashRef[ HashRef ]',
-  init_arg => undef,
-  is       => 'bare',
-  default  => sub { +{} },
-  traits   => [qw( Hash )],
-  handles  => {
-    _has_advert => 'exists',
-    _set_advert => 'set',
-    _get_advert => 'get',
-  },
-);
+sub _has_package {
+  my ( undef, $package ) = @_;
+  return exists $_registry_store->{$package};
+}
+
+sub _set_package {
+  my ( undef, $package, $value ) = @_;
+  return $_registry_store->{$package} = $value;
+}
+
+sub _get_package {
+  my ( undef, $package ) = @_;
+  return $_registry_store->{$package};
+}
+
+my $_advertisements = {};
+
+sub _has_advert {
+  my ( undef, $package ) = @_;
+  return exists $_advertisements->{$package};
+}
+
+sub _set_advert {
+  my ( undef, $package, $value ) = @_;
+  return $_advertisements->{$package} = $value;
+}
+
+sub _get_advert {
+  my ( undef, $package ) = @_;
+  return $_advertisements->{$package};
+}
 
 
 
@@ -117,9 +122,6 @@ sub set_value {
   return;
 }
 
-no Moose;
-
-__PACKAGE__->meta->make_immutable;
 1;
 
 __END__

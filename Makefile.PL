@@ -40,6 +40,7 @@ my %WriteMakefileArgs = (
     "Test::Fatal" => 0,
     "Test::More" => "0.89",
     "lib" => 0,
+    "namespace::autoclean" => "0.09",
     "version" => 0
   },
   "VERSION" => "1.000000",
