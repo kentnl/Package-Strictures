@@ -20,6 +20,7 @@
  - File::Spec::Functions
  - List::Util
  - lib
+ - namespace::autoclean
  - version
 
  [Changed / test requires]
@@ -30,6 +31,11 @@
 
  [Removed / configure requires]
  - Module::Build 0.4003
+
+ [Removed / runtime requires]
+ - Moose 0.92
+ - MooseX::ClassAttribute 0.10
+ - namespace::autoclean 0.09
 
  [Removed / test requires]
  - File::Find
