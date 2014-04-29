@@ -79,12 +79,11 @@ sub _setup_stricture {
   }
 
   $self->_advertise_stricture( $package, $name );
-  my $value = $self->_fetch_stricture_value( $package, $name, $prototype->{default} );
-  my $code = sub() { $value };
-  {
-    no strict 'refs';
-    *{ $package . q{::} . $name } = $code;
-  }
+
+  require Import::Into;
+  require constant;
+
+  constant->import::into( $package, $name, $self->_fetch_stricture_value( $package, $name, $prototype->{default} ) );
 
   return;
 }
