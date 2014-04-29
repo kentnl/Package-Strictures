@@ -1,6 +1,34 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Minor]
+ - A few minor implementation/dependency changes
+ - Packaging changes that might be important for downstreams repackaging by
+   hand.
+
+ [01 New Constant generation bug fix]
+ - Instead of the previous approach of trying to create constants for the
+   per-package stricutres ourselves, we now use a combination of
+   constant.pm and Import::Into
+ - This approcach should be more reliable long term for ensuring constant
+   folding takes place.
+ - This change resolves closes #1 on github.
+ - This also means this package is no longer broken >perl 5.19.3 after the
+   close of perl #79908
+ - Thanks to Slaven Rezić for reporting, and thanks to Andreas J. Koenig
+   for the scattered smoke testing that helped me find which Perl change
+   broke this.
+
+ [02 Tooling switched]
+ - ExtUtils::MakeMaker is now used instead of Module::Build
+ - And "Latest" versions are now only recommended dependencies instead of
+   mandatory ones.
+
+ [03 Version Scheme switched]
+ - Version scheme reduced to floating point with a mantissa of 6, as
+   opposed to a mantissa of 8
+ - This is the primary reason for 0.xxx -> 1.xxx
+
  [Dependencies::Stats]
  - Dependencies changed since 0.01001319, see Changes.deps{,.all,.dev} for
    details
