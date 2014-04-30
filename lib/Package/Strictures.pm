@@ -1,18 +1,68 @@
+use 5.008;    # 8 = utf8, 6 = pragmas, our, 5 = qr, 4 = __PACAKGE__,for my
 use strict;
 use warnings;
+use utf8;
 
 package Package::Strictures;
-BEGIN {
-  $Package::Strictures::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Package::Strictures::VERSION = '0.01001319';
-}
+$Package::Strictures::VERSION = '1.000000';
+# ABSTRACT: Facilitate toggling validation code at users request, without extra performance penalties.
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Package::Strictures::Registry;
 use Carp ();
 
-# ABSTRACT: Facilitate toggling validation code at users request, without extra performance penalties.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -54,7 +104,8 @@ sub _setup_from {
   if ($reftype) {
     Carp::croak("-from can only take a scalar, not a ref, got `$reftype`");
   }
-  if ( $from =~ qr{\.ini$} ) {
+  ## no critic (RegularExpressions::RequireDotMatchAnything RegularExpressions::RequireLineBoundaryMatching)
+  if ( $from =~ /[.]ini$/x ) {
     $self->_setup_from_ini($from);
     return;
   }
@@ -74,10 +125,13 @@ sub _setup_from_ini {
 }
 
 sub _setup_for_package {
-  my ( $self, $params, $package ) = @_;
+  my ( undef, $params, $package ) = @_;
   my $reftype = ref $params;
   if ( $reftype ne 'HASH' ) {
-    Carp::croak("-for => { Some::Name => X } presently only takes HASH, got `$reftype` on package `$package` ");
+    my $mesg = q[];
+    $mesg .= q[-for => { Some::Name => X } presently only takes HASH,];
+    $mesg .= q[got `%s` on package `%s` ];
+    Carp::croak( sprintf $mesg, $reftype, $package );
   }
   for my $value ( keys %{$params} ) {
     Package::Strictures::Registry->set_value( $package, $value, $params->{$value} );
@@ -91,13 +145,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Package::Strictures - Facilitate toggling validation code at users request, without extra performance penalties.
 
 =head1 VERSION
 
-version 0.01001319
+version 1.000000
 
 =head1 SYNOPSIS
 
@@ -117,7 +173,7 @@ version 0.01001319
     /* Elimintated Code */
   }
 
-See L<Package::Strictures::Register> for more detail.
+See L<< C<Package::Strictures::Register>|Package::Strictures::Register >> for more detail.
 
 =head2 CONSUMING USERS
 
@@ -135,15 +191,15 @@ See L<Package::Strictures::Register> for more detail.
 
 Often, I find myself in a bind, where I have code I want to do things properly, so it will detect
 of its own accord ( at run time ) misuses of varying data-structures or methods, but the very same
-tools that would be used to analyse and assure that things are going correctly, result in substantial
+tools that would be used to analyze and assure that things are going correctly, result in substantial
 performance penalties.
 
-This module, and the infrastructure I hope builds on top of it, may hopefully provide an 'in' that lets me have the best of both worlds,
-fast on the production server, and concise when trying to debug it ( that is, not having to manually desk-check the whole execution cycle
-through various functions and modules just to find which level things are going wrong at ).
+This module, and the infrastructure I hope builds on top of it, may hopefully provide an 'in' that lets me have the best of both
+worlds, fast on the production server, and concise when trying to debug it ( that is, not having to manually desk-check the
+whole execution cycle through various functions and modules just to find which level things are going wrong at ).
 
-In an ideal world, code would be both fast and concise, however, that is a future fantasy, and this here instead aims to produce 80% of the same
-benefits, but now, instead of never.
+In an ideal world, code would be both fast and concise, however, that is a future fantasy, and this here instead aims to
+produce 80% of the same benefits, but now, instead of never.
 
 =head1 MINOR WARNING
 
@@ -155,7 +211,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Kent Fredric.
+This software is copyright (c) 2014 by Kent Fredric.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

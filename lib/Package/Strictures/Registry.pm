@@ -1,46 +1,61 @@
+use 5.008;    #  8 = utf8, 6 = pragmas, our, 5 = list undef.
 use strict;
 use warnings;
+use utf8;
 
 package Package::Strictures::Registry;
-BEGIN {
-  $Package::Strictures::Registry::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Package::Strictures::Registry::VERSION = '0.01001319';
-}
-
+$Package::Strictures::Registry::VERSION = '1.000000';
 # ABSTRACT: Data Storage name-space for stricture parameters.
 
-use Moose;
-use namespace::autoclean;
-use MooseX::ClassAttribute;
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
 use Carp ();
 
-class_has '_registry_store' => (
-  isa      => 'HashRef[ HashRef ]',
-  init_arg => undef,
-  is       => 'bare',
-  default  => sub { +{} },
-  traits   => [qw( Hash )],
-  handles  => {
-    _has_package => 'exists',
-    _set_package => 'set',
-    _get_package => 'get',
-  },
-);
+my $_registry_store = {};
 
-class_has '_advertisments' => (
-  isa      => 'HashRef[ HashRef ]',
-  init_arg => undef,
-  is       => 'bare',
-  default  => sub { +{} },
-  traits   => [qw( Hash )],
-  handles  => {
-    _has_advert => 'exists',
-    _set_advert => 'set',
-    _get_advert => 'get',
-  },
-);
+sub _has_package {
+  my ( undef, $package ) = @_;
+  return exists $_registry_store->{$package};
+}
+
+sub _set_package {
+  my ( undef, $package, $value ) = @_;
+  return $_registry_store->{$package} = $value;
+}
+
+sub _get_package {
+  my ( undef, $package ) = @_;
+  return $_registry_store->{$package};
+}
+
+my $_advertisements = {};
+
+sub _has_advert {
+  my ( undef, $package ) = @_;
+  return exists $_advertisements->{$package};
+}
+
+sub _set_advert {
+  my ( undef, $package, $value ) = @_;
+  return $_advertisements->{$package} = $value;
+}
+
+sub _get_advert {
+  my ( undef, $package ) = @_;
+  return $_advertisements->{$package};
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 sub advertise_value {
@@ -58,11 +73,30 @@ sub advertise_value {
 }
 
 
+
+
+
+
+
+
+
+
+
 sub has_value {
   my ( $self, $package, $name ) = @_;
   return unless ( $self->_has_package($package) );
   return exists $self->_get_package($package)->{$name};
 }
+
+
+
+
+
+
+
+
+
+
 
 
 sub get_value {
@@ -74,6 +108,15 @@ sub get_value {
 }
 
 
+
+
+
+
+
+
+
+
+
 sub set_value {
   my ( $self, $package, $name, $value ) = @_;
   if ( not $self->_has_package($package) ) {
@@ -83,14 +126,13 @@ sub set_value {
   return;
 }
 
-no Moose;
-
-__PACKAGE__->meta->make_immutable;
 1;
 
 __END__
 
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -98,7 +140,7 @@ Package::Strictures::Registry - Data Storage name-space for stricture parameters
 
 =head1 VERSION
 
-version 0.01001319
+version 1.000000
 
 =head1 METHODS
 
@@ -106,7 +148,8 @@ version 0.01001319
 
   Package::Strictures::Registry->advertise_value( 'Some::Package', "STRICT");
 
-An informational data-storage for developers to see what packages that are loaded have strictures that are able to be tuned, without having to grok the source.
+An informational data-storage for developers to see what packages that are loaded have strictures that are able to be tuned,
+without having to grok the source.
 
 Note that by the time you see this value, it is already too late to try setting it.
 
@@ -124,7 +167,8 @@ This will be picked up by a performing package when somebody first use/require's
 
 Returns the value stored earlier if there was one.
 
-This is done internally by L<Package::Strictures::Register> to populate the values for the compile-time constants.
+This is done internally by L<<  C<Package::Strictures::Register>|Package::Strictures::Register >> to populate the values for
+the compile-time constants.
 
 =head2 set_value
 
@@ -140,7 +184,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Kent Fredric.
+This software is copyright (c) 2014 by Kent Fredric.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

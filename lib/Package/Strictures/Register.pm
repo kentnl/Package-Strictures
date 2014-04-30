@@ -1,18 +1,17 @@
+use 5.008;    # 8 = utf8, 6 = pragmas, our, 4 = __PACAKGE__
+
 use strict;
 use warnings;
+use utf8;
 
 package Package::Strictures::Register;
-BEGIN {
-  $Package::Strictures::Register::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Package::Strictures::Register::VERSION = '0.01001319';
-}
+$Package::Strictures::Register::VERSION = '1.000000';
+# ABSTRACT: Create compile-time constants that can be tweaked by users with Package::Strictures.
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Package::Strictures::Registry ();
 use Carp                          ();
-
-# ABSTRACT: Create compile-time constants that can be tweaked by users with Package::Strictures.
 
 sub import {
   my ( $self, %params ) = @_;
@@ -40,7 +39,7 @@ sub _setup {
 
   my $reftype = ref $params;
 
-  if ( not $reftype eq 'HASH' ) {
+  if ( not 'HASH' eq $reftype ) {
     Carp::croak(qq/ -setup => can presently only support a HASH. Got '$reftype'/);
   }
 
@@ -64,7 +63,7 @@ sub _setup_strictures {
   my ( $self, $strictures, $package ) = @_;
   my $reftype = ref $strictures;
 
-  if ( not $reftype eq 'HASH' ) {
+  if ( not 'HASH' eq $reftype ) {
     Carp::croak( qq/Can't handle anything except a HASH ( Got $reftype )/
         . qq/ for param -setup => { -strictures =>  } in -setup for $package/ );
   }
@@ -85,24 +84,23 @@ sub _setup_stricture {
   }
 
   $self->_advertise_stricture( $package, $name );
-  my $value = $self->_fetch_stricture_value( $package, $name, $prototype->{default} );
-  my $code = sub() { $value };
-  {
-    no strict 'refs';
-    *{ $package . q{::} . $name } = $code;
-  }
+
+  require Import::Into;
+  require constant;
+
+  constant->import::into( $package, $name, $self->_fetch_stricture_value( $package, $name, $prototype->{default} ) );
 
   return;
 }
 
 sub _advertise_stricture {
-  my ( $self, $package, $name ) = @_;
+  my ( undef, $package, $name ) = @_;
   Package::Strictures::Registry->advertise_value( $package, $name );
   return;
 }
 
 sub _fetch_stricture_value {
-  my ( $self, $package, $name, $default ) = @_;
+  my ( undef, $package, $name, $default ) = @_;
   if ( Package::Strictures::Registry->has_value( $package, $name ) ) {
     return Package::Strictures::Registry->get_value( $package, $name );
   }
@@ -115,13 +113,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Package::Strictures::Register - Create compile-time constants that can be tweaked by users with Package::Strictures.
 
 =head1 VERSION
 
-version 0.01001319
+version 1.000000
 
 =head1 AUTHOR
 
@@ -129,7 +129,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Kent Fredric.
+This software is copyright (c) 2014 by Kent Fredric.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

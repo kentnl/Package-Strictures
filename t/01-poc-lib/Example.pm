@@ -20,7 +20,7 @@ use Package::Strictures::Register -setup => {
   }
 };
 
-use namespace::autoclean;
+use namespace::clean;
 
 sub slow {
   my $result = 5;
