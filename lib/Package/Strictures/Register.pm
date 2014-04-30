@@ -39,7 +39,7 @@ sub _setup {
 
   my $reftype = ref $params;
 
-  if ( not $reftype eq 'HASH' ) {
+  if ( not 'HASH' eq $reftype ) {
     Carp::croak(qq/ -setup => can presently only support a HASH. Got '$reftype'/);
   }
 
@@ -63,7 +63,7 @@ sub _setup_strictures {
   my ( $self, $strictures, $package ) = @_;
   my $reftype = ref $strictures;
 
-  if ( not $reftype eq 'HASH' ) {
+  if ( not 'HASH' eq $reftype ) {
     Carp::croak( qq/Can't handle anything except a HASH ( Got $reftype )/
         . qq/ for param -setup => { -strictures =>  } in -setup for $package/ );
   }
@@ -94,13 +94,13 @@ sub _setup_stricture {
 }
 
 sub _advertise_stricture {
-  my ( $self, $package, $name ) = @_;
+  my ( undef, $package, $name ) = @_;
   Package::Strictures::Registry->advertise_value( $package, $name );
   return;
 }
 
 sub _fetch_stricture_value {
-  my ( $self, $package, $name, $default ) = @_;
+  my ( undef, $package, $name, $default ) = @_;
   if ( Package::Strictures::Registry->has_value( $package, $name ) ) {
     return Package::Strictures::Registry->get_value( $package, $name );
   }
