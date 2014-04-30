@@ -164,7 +164,7 @@ This will be picked up by a performing package when somebody first use/require's
 
 Returns the value stored earlier if there was one.
 
-This is done internally by L<Package::Strictures::Register> to populate the values for the compile-time constants.
+This is done internally by L<<  C<Package::Strictures::Register>|Package::Strictures::Register >> to populate the values for the compile-time constants.
 
 =head2 set_value
 
