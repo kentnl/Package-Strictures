@@ -1,5 +1,8 @@
+use 5.008;    # 8 = utf8, 6 = pragmas, our, 4 = __PACAKGE__
+
 use strict;
 use warnings;
+use utf8;
 
 package Package::Strictures::Register;
 
