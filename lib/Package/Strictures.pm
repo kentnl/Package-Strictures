@@ -104,7 +104,8 @@ sub _setup_from {
   if ($reftype) {
     Carp::croak("-from can only take a scalar, not a ref, got `$reftype`");
   }
-  if ( $from =~ qr{\.ini$} ) {
+  ## no critic (RegularExpressions::RequireDotMatchAnything RegularExpressions::RequireLineBoundaryMatching)
+  if ( $from =~ /[.]ini$/x ) {
     $self->_setup_from_ini($from);
     return;
   }
