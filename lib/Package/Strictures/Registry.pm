@@ -57,6 +57,7 @@ sub _get_advert {
 
 
 
+
 sub advertise_value {
   my ( $self, $package, $name ) = @_;
   if ( not $self->_has_advert($package) ) {
@@ -86,6 +87,7 @@ sub has_value {
   return unless ( $self->_has_package($package) );
   return exists $self->_get_package($package)->{$name};
 }
+
 
 
 
@@ -146,7 +148,8 @@ version 1.000000
 
   Package::Strictures::Registry->advertise_value( 'Some::Package', "STRICT");
 
-An informational data-storage for developers to see what packages that are loaded have strictures that are able to be tuned, without having to grok the source.
+An informational data-storage for developers to see what packages that are loaded have strictures that are able to be tuned,
+without having to grok the source.
 
 Note that by the time you see this value, it is already too late to try setting it.
 
@@ -164,7 +167,8 @@ This will be picked up by a performing package when somebody first use/require's
 
 Returns the value stored earlier if there was one.
 
-This is done internally by L<<  C<Package::Strictures::Register>|Package::Strictures::Register >> to populate the values for the compile-time constants.
+This is done internally by L<<  C<Package::Strictures::Register>|Package::Strictures::Register >> to populate the values for
+the compile-time constants.
 
 =head2 set_value
 
