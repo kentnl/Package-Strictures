@@ -39,7 +39,7 @@ sub _setup {
 
   my $reftype = ref $params;
 
-  if ( not $reftype eq 'HASH' ) {
+  if ( not 'HASH' eq $reftype ) {
     Carp::croak(qq/ -setup => can presently only support a HASH. Got '$reftype'/);
   }
 
@@ -63,7 +63,7 @@ sub _setup_strictures {
   my ( $self, $strictures, $package ) = @_;
   my $reftype = ref $strictures;
 
-  if ( not $reftype eq 'HASH' ) {
+  if ( not 'HASH' eq $reftype ) {
     Carp::croak( qq/Can't handle anything except a HASH ( Got $reftype )/
         . qq/ for param -setup => { -strictures =>  } in -setup for $package/ );
   }
