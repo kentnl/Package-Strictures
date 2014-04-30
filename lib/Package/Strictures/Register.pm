@@ -94,13 +94,13 @@ sub _setup_stricture {
 }
 
 sub _advertise_stricture {
-  my ( $self, $package, $name ) = @_;
+  my ( undef, $package, $name ) = @_;
   Package::Strictures::Registry->advertise_value( $package, $name );
   return;
 }
 
 sub _fetch_stricture_value {
-  my ( $self, $package, $name, $default ) = @_;
+  my ( undef, $package, $name, $default ) = @_;
   if ( Package::Strictures::Registry->has_value( $package, $name ) ) {
     return Package::Strictures::Registry->get_value( $package, $name );
   }

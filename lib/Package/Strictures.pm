@@ -125,7 +125,7 @@ sub _setup_from_ini {
 }
 
 sub _setup_for_package {
-  my ( $self, $params, $package ) = @_;
+  my ( undef, $params, $package ) = @_;
   my $reftype = ref $params;
   if ( $reftype ne 'HASH' ) {
     Carp::croak("-for => { Some::Name => X } presently only takes HASH, got `$reftype` on package `$package` ");
