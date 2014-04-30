@@ -1,6 +1,6 @@
 ﻿Revision history for Package-Strictures
 
-1.000000 2014-04-30T10:23:26Z
+1.000000 2014-04-30T12:36:53Z
  [00 Major]
  - A few moderate implementation/dependency changes
  - Packaging changes that might be important for downstreams repackaging by
@@ -38,6 +38,7 @@
  [Dependencies::Aggregate]
  - 5.008 : 48
  - 5.010 : 37
+ - 5.018 : 22
  - 5.019 : 23
 
  [Dependencies::Stats]
