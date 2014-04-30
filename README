@@ -21,7 +21,7 @@ SYNOPSIS
         /* Elimintated Code */
       }
 
-    See Package::Strictures::Register for more detail.
+    See "Package::Strictures::Register" for more detail.
 
   CONSUMING USERS
       use Package::Strictures -for => {

@@ -125,7 +125,7 @@ sub _setup_from_ini {
 }
 
 sub _setup_for_package {
-  my ( $self, $params, $package ) = @_;
+  my ( undef, $params, $package ) = @_;
   my $reftype = ref $params;
   if ( $reftype ne 'HASH' ) {
     Carp::croak("-for => { Some::Name => X } presently only takes HASH, got `$reftype` on package `$package` ");
@@ -170,7 +170,7 @@ version 1.000000
     /* Elimintated Code */
   }
 
-See L<Package::Strictures::Register> for more detail.
+See L<< C<Package::Strictures::Register>|Package::Strictures::Register >> for more detail.
 
 =head2 CONSUMING USERS
 
@@ -191,12 +191,12 @@ of its own accord ( at run time ) misuses of varying data-structures or methods,
 tools that would be used to analyze and assure that things are going correctly, result in substantial
 performance penalties.
 
-This module, and the infrastructure I hope builds on top of it, may hopefully provide an 'in' that lets me have the best of both worlds,
-fast on the production server, and concise when trying to debug it ( that is, not having to manually desk-check the whole execution cycle
-through various functions and modules just to find which level things are going wrong at ).
+This module, and the infrastructure I hope builds on top of it, may hopefully provide an 'in' that lets me have the best of both
+worlds, fast on the production server, and concise when trying to debug it ( that is, not having to manually desk-check the
+whole execution cycle through various functions and modules just to find which level things are going wrong at ).
 
-In an ideal world, code would be both fast and concise, however, that is a future fantasy, and this here instead aims to produce 80% of the same
-benefits, but now, instead of never.
+In an ideal world, code would be both fast and concise, however, that is a future fantasy, and this here instead aims to
+produce 80% of the same benefits, but now, instead of never.
 
 =head1 MINOR WARNING
 
