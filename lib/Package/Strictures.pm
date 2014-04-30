@@ -104,7 +104,8 @@ sub _setup_from {
   if ($reftype) {
     Carp::croak("-from can only take a scalar, not a ref, got `$reftype`");
   }
-  if ( $from =~ qr{\.ini$} ) {
+  ## no critic (RegularExpressions::RequireDotMatchAnything RegularExpressions::RequireLineBoundaryMatching)
+  if ( $from =~ /[.]ini$/x ) {
     $self->_setup_from_ini($from);
     return;
   }
@@ -187,7 +188,7 @@ See L<Package::Strictures::Register> for more detail.
 
 Often, I find myself in a bind, where I have code I want to do things properly, so it will detect
 of its own accord ( at run time ) misuses of varying data-structures or methods, but the very same
-tools that would be used to analyse and assure that things are going correctly, result in substantial
+tools that would be used to analyze and assure that things are going correctly, result in substantial
 performance penalties.
 
 This module, and the infrastructure I hope builds on top of it, may hopefully provide an 'in' that lets me have the best of both worlds,
