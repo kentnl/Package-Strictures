@@ -1,5 +1,7 @@
+use 5.006; # pragmas, our
 use strict;
 use warnings;
+use utf8;
 
 package Package::Strictures::Registry;
 $Package::Strictures::Registry::VERSION = '1.000000';

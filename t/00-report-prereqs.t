@@ -112,8 +112,9 @@ my $static_prereqs = do { my $x = {
                                       'Config::INI::Reader' => '0.014',
                                       'Import::Into' => '0',
                                       'constant' => '0',
-                                      'perl' => '5.006',
+                                      'perl' => '5.008',
                                       'strict' => '0',
+                                      'utf8' => '0',
                                       'warnings' => '0'
                                     }
                     },
