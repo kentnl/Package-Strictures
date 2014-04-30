@@ -1,8 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
- [00 Minor]
- - A few minor implementation/dependency changes
+ [00 Major]
+ - A few moderate implementation/dependency changes
  - Packaging changes that might be important for downstreams repackaging by
    hand.
 
@@ -34,6 +34,12 @@
  - Version scheme reduced to floating point with a mantissa of 6, as
    opposed to a mantissa of 8
  - This is the primary reason for 0.xxx -> 1.xxx
+
+ [Dependencies::Aggregate]
+ - 5.008 : 48
+ - 5.010 : 37
+ - 5.018 : 22
+ - 5.019 : 23
 
  [Dependencies::Stats]
  - Dependencies changed since 0.01001319, see Changes.deps{,.all,.dev} for
