@@ -20,7 +20,7 @@
  - File::Spec::Functions
  - List::Util
  - lib
- - namespace::autoclean
+ - namespace::clean
  - version
 
  [Changed / test requires]

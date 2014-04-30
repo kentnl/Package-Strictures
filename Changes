@@ -1,6 +1,6 @@
 ﻿Revision history for Package-Strictures
 
-1.000000 2014-04-29T07:49:35Z
+1.000000 2014-04-29T07:54:02Z
  [00 Minor]
  - A few minor implementation/dependency changes
  - Packaging changes that might be important for downstreams repackaging by
@@ -19,12 +19,18 @@
    for the scattered smoke testing that helped me find which Perl change
    broke this.
 
- [02 Tooling switched]
+ [02 Moose requirement eliminated]
+ - Moose was previously used in Registry.pm to do almost nothing, and so
+   the dependency was easy to eliminate.
+ - namespace::autoclean was nuked in favour of namespace::clean to further
+   eliminate Moose from installation requirements.
+
+ [03 Tooling switched]
  - ExtUtils::MakeMaker is now used instead of Module::Build
  - And "Latest" versions are now only recommended dependencies instead of
    mandatory ones.
 
- [03 Version Scheme switched]
+ [04 Version Scheme switched]
  - Version scheme reduced to floating point with a mantissa of 6, as
    opposed to a mantissa of 8
  - This is the primary reason for 0.xxx -> 1.xxx
