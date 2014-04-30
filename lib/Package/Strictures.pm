@@ -128,7 +128,8 @@ sub _setup_for_package {
   my ( undef, $params, $package ) = @_;
   my $reftype = ref $params;
   if ( $reftype ne 'HASH' ) {
-    Carp::croak("-for => { Some::Name => X } presently only takes HASH, got `$reftype` on package `$package` ");
+    my $mesg = q[-for => { Some::Name => X } presently only takes HASH, got `%s` on package `%s` ];
+    Carp::croak( sprintf $mesg, $reftype, $package );
   }
   for my $value ( keys %{$params} ) {
     Package::Strictures::Registry->set_value( $package, $value, $params->{$value} );
