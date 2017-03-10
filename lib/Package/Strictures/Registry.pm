@@ -4,7 +4,7 @@ use warnings;
 use utf8;
 
 package Package::Strictures::Registry;
-$Package::Strictures::Registry::VERSION = '1.000000';
+$Package::Strictures::Registry::VERSION = '1.000001';
 # ABSTRACT: Data Storage name-space for stricture parameters.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
@@ -140,7 +140,7 @@ Package::Strictures::Registry - Data Storage name-space for stricture parameters
 
 =head1 VERSION
 
-version 1.000000
+version 1.000001
 
 =head1 METHODS
 
@@ -184,7 +184,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Kent Fredric.
+This software is copyright (c) 2017 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
