@@ -1,4 +1,4 @@
-use 5.008;    # 8 = utf8, 6 = pragmas, our, 5 = qr, 4 = __PACAKGE__,for my
+use 5.006;    #6 = pragmas, our, 5 = qr, 4 = __PACAKGE__,for my
 use strict;
 use warnings;
 

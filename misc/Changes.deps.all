@@ -2,7 +2,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
 
 1.000001
  [Added / configure requires]
- - perl 5.008
+ - perl 5.006
 
  [Added / develop recommends]
  - Test::More 0.99
@@ -33,7 +33,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
 
  [Added / test requires]
  - File::Spec
- - perl 5.008
+ - perl 5.006
 
  [Changed / configure recommends]
  - ExtUtils::MakeMaker 6.96 → 7.00
@@ -46,6 +46,9 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::Plugin::MetaData::BuiltWith 0 → 1.004000
  - Dist::Zilla::Plugin::Test::Compile::PerFile 0 → 0.003902
  - Test::Kwalitee 1.12 → 1.21
+
+ [Changed / runtime requires]
+ - perl 5.008 → 5.006
 
  [Changed / test recommends]
  - CPAN::Meta 0 → 2.120900

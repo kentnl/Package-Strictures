@@ -5,7 +5,7 @@ do { my $x = {
                                         },
                         'requires' => {
                                         'ExtUtils::MakeMaker' => '0',
-                                        'perl' => '5.008'
+                                        'perl' => '5.006'
                                       }
                       },
        'develop' => {
@@ -85,7 +85,7 @@ do { my $x = {
                                       'Config::INI::Reader' => '0.014',
                                       'Import::Into' => '0',
                                       'constant' => '0',
-                                      'perl' => '5.008',
+                                      'perl' => '5.006',
                                       'strict' => '0',
                                       'warnings' => '0'
                                     }
@@ -105,7 +105,7 @@ do { my $x = {
                                    'Test::More' => '0',
                                    'lib' => '0',
                                    'namespace::clean' => '0',
-                                   'perl' => '5.008'
+                                   'perl' => '5.006'
                                  }
                  }
      };

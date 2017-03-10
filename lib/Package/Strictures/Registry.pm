@@ -1,4 +1,4 @@
-use 5.008;    #  8 = utf8, 6 = pragmas, our, 5 = list undef.
+use 5.006;    #  6 = pragmas, our, 5 = list undef.
 use strict;
 use warnings;
 
