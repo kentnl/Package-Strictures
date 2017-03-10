@@ -1,10 +1,11 @@
-use 5.008;    # 8 = utf8, 6 = pragmas, our, 5 = qr, 4 = __PACAKGE__,for my
+use 5.006;    #6 = pragmas, our, 5 = qr, 4 = __PACAKGE__,for my
 use strict;
 use warnings;
-use utf8;
 
 package Package::Strictures;
-$Package::Strictures::VERSION = '1.000000';
+
+our $VERSION = '1.000001';
+
 # ABSTRACT: Facilitate toggling validation code at users request, without extra performance penalties.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
@@ -153,7 +154,7 @@ Package::Strictures - Facilitate toggling validation code at users request, with
 
 =head1 VERSION
 
-version 1.000000
+version 1.000001
 
 =head1 SYNOPSIS
 
@@ -211,7 +212,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Kent Fredric.
+This software is copyright (c) 2017 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -1,11 +1,11 @@
-use 5.008;    # 8 = utf8, 6 = pragmas, our, 4 = __PACAKGE__
-
+use 5.006;    # 6 = pragmas, our, 4 = __PACAKGE__
 use strict;
 use warnings;
-use utf8;
 
 package Package::Strictures::Register;
-$Package::Strictures::Register::VERSION = '1.000000';
+
+our $VERSION = '1.000001';
+
 # ABSTRACT: Create compile-time constants that can be tweaked by users with Package::Strictures.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
@@ -121,7 +121,7 @@ Package::Strictures::Register - Create compile-time constants that can be tweake
 
 =head1 VERSION
 
-version 1.000000
+version 1.000001
 
 =head1 AUTHOR
 
@@ -129,7 +129,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Kent Fredric.
+This software is copyright (c) 2017 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

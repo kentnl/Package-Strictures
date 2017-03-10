@@ -42,6 +42,8 @@ allow_includes = 1
 
 [BuiltinFunctions::ProhibitUniversalIsa]
 
+[BuiltinFunctions::ProhibitUselessTopic]
+
 [BuiltinFunctions::ProhibitVoidGrep]
 
 [BuiltinFunctions::ProhibitVoidMap]
@@ -86,7 +88,7 @@ allow_includes = 1
 
 [CodeLayout::RequireTrailingCommas]
 
-[CodeLayout::RequireUseUTF8]
+[-CodeLayout::RequireUseUTF8]
 
 [Compatibility::ConstantLeadingUnderscore]
 
@@ -145,6 +147,8 @@ spell_command = aspell list --lang en_US
 
 [Documentation::RequireEndBeforeLastPod]
 
+[Documentation::RequireFilenameMarkup]
+
 [Documentation::RequireFinalCut]
 
 [Documentation::RequireLinkedURLs]
@@ -155,7 +159,7 @@ spell_command = aspell list --lang en_US
 
 [Documentation::RequirePodAtEnd]
 
-[Documentation::RequirePodLinksIncludeText]
+[-Documentation::RequirePodLinksIncludeText]
 
 [-Documentation::RequirePodSections]
 
@@ -292,13 +296,15 @@ allowed_pragmata = diagnostics feature perlversion strict warnings utf8
 
 [RegularExpressions::ProhibitUnusualDelimiters]
 
+[RegularExpressions::ProhibitUselessTopic]
+
 [RegularExpressions::RequireBracesForMultiline]
 
 [RegularExpressions::RequireDotMatchAnything]
 
 [RegularExpressions::RequireExtendedFormatting]
 
-[RegularExpressions::RequireLineBoundaryMatching]
+[-RegularExpressions::RequireLineBoundaryMatching]
 
 [Subroutines::ProhibitAmpersandSigils]
 
@@ -310,7 +316,7 @@ allowed_pragmata = diagnostics feature perlversion strict warnings utf8
 
 [Subroutines::ProhibitExcessComplexity]
 
-[Subroutines::ProhibitExplicitReturnUndef]
+[-Subroutines::ProhibitExplicitReturnUndef]
 
 [Subroutines::ProhibitExportingUndeclaredSubs]
 
@@ -329,9 +335,9 @@ private_name_regex = _(?!build_)\w
 
 [Subroutines::ProtectPrivateSubs]
 
-[Subroutines::RequireArgUnpacking]
+[-Subroutines::RequireArgUnpacking]
 
-[Subroutines::RequireFinalReturn]
+[-Subroutines::RequireFinalReturn]
 
 [TestingAndDebugging::ProhibitNoStrict]
 
@@ -366,7 +372,7 @@ base_max = 130
 
 [ValuesAndExpressions::ProhibitComplexVersion]
 
-[ValuesAndExpressions::ProhibitConstantPragma]
+[-ValuesAndExpressions::ProhibitConstantPragma]
 
 [ValuesAndExpressions::ProhibitDuplicateHashKeys]
 
