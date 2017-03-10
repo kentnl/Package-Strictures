@@ -4,7 +4,9 @@ use warnings;
 use utf8;
 
 package Package::Strictures;
-$Package::Strictures::VERSION = '1.000001';
+
+our $VERSION = '1.000001';
+
 # ABSTRACT: Facilitate toggling validation code at users request, without extra performance penalties.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY

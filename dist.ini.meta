@@ -5,7 +5,8 @@ license = Perl_5
 copyright_holder = Kent Fredric <kentfredric@gmail.com>
 
 [@Author::KENTNL]
-git_versions = 1
+:version = 2.025020
+bump_versions = 1
 ; twitter_extra_hash_tags =
 toolkit          = eumm
 toolkit_hardness = soft
