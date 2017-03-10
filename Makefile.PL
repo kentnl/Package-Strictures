@@ -22,7 +22,6 @@ my %WriteMakefileArgs = (
     "Import::Into" => 0,
     "constant" => 0,
     "strict" => 0,
-    "utf8" => 0,
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
@@ -56,7 +55,6 @@ my %FallbackPrereqs = (
   "lib" => 0,
   "namespace::clean" => 0,
   "strict" => 0,
-  "utf8" => 0,
   "warnings" => 0
 );
 

@@ -39,7 +39,6 @@ requires:
   constant: '0'
   perl: '5.008'
   strict: '0'
-  utf8: '0'
   warnings: '0'
 resources:
   bugtracker: https://github.com/kentnl/Package-Strictures/issues

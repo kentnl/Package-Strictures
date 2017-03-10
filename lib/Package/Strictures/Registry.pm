@@ -1,7 +1,6 @@
 use 5.008;    #  8 = utf8, 6 = pragmas, our, 5 = list undef.
 use strict;
 use warnings;
-use utf8;
 
 package Package::Strictures::Registry;
 
