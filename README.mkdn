@@ -4,7 +4,7 @@ Package::Strictures - Facilitate toggling validation code at users request, with
 
 # VERSION
 
-version 1.000001
+version 1.000002
 
 # SYNOPSIS
 
