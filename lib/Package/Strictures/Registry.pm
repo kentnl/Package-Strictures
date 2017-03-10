@@ -4,9 +4,7 @@ use warnings;
 use utf8;
 
 package Package::Strictures::Registry;
-
-our $VERSION = '1.000001';
-
+$Package::Strictures::Registry::VERSION = '1.000001';
 # ABSTRACT: Data Storage name-space for stricture parameters.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY

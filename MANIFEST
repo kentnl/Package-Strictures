@@ -33,7 +33,6 @@ t/01-02-strictures.t
 t/01-03-loadfile.t
 t/01-poc-lib/Example.pm
 t/strictures.ini
-weaver.ini
 xt/author/critic.t
 xt/author/eol.t
 xt/author/pod-coverage.t
