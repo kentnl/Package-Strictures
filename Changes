@@ -1,6 +1,6 @@
 Revision history for Package-Strictures
 
-1.000001 2017-03-10T14:13:55Z 5aa59b8
+1.000001 2017-03-10T14:14:07Z 9df549b
  - Avoid test failures with -Ddefault_inc_excludes_dot
 
  [Dependencies::Stats]
