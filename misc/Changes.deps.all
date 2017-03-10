@@ -66,6 +66,9 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Removed / develop suggests]
  - Dist::Zilla::PluginBundle::Author::KENTNL::Lite v1.3.0
 
+ [Removed / runtime requires]
+ - utf8
+
  [Removed / test recommends]
  - CPAN::Meta::Requirements 2.120900
 
