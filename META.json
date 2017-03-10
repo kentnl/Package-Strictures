@@ -127,15 +127,15 @@
    "provides" : {
       "Package::Strictures" : {
          "file" : "lib/Package/Strictures.pm",
-         "version" : "1.000001"
+         "version" : "1.000002"
       },
       "Package::Strictures::Register" : {
          "file" : "lib/Package/Strictures/Register.pm",
-         "version" : "1.000001"
+         "version" : "1.000002"
       },
       "Package::Strictures::Registry" : {
          "file" : "lib/Package/Strictures/Registry.pm",
-         "version" : "1.000001"
+         "version" : "1.000002"
       }
    },
    "release_status" : "stable",
@@ -150,7 +150,7 @@
          "web" : "https://github.com/kentnl/Package-Strictures"
       }
    },
-   "version" : "1.000001",
+   "version" : "1.000002",
    "x_BuiltWith" : {
       "external_file" : "misc/built_with.json"
    },
@@ -656,7 +656,7 @@
                   "branch" : null,
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "1.000001-source",
+                  "tag" : "1.000002-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v"
                },
@@ -750,7 +750,7 @@
                   "branch" : "releases",
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "1.000001",
+                  "tag" : "1.000002",
                   "tag_format" : "%v",
                   "tag_message" : "v%v"
                },

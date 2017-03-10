@@ -4,7 +4,7 @@ use warnings;
 
 package Package::Strictures;
 
-our $VERSION = '1.000001';
+our $VERSION = '1.000002';
 
 # ABSTRACT: Facilitate toggling validation code at users request, without extra performance penalties.
 
@@ -154,7 +154,7 @@ Package::Strictures - Facilitate toggling validation code at users request, with
 
 =head1 VERSION
 
-version 1.000001
+version 1.000002
 
 =head1 SYNOPSIS
 

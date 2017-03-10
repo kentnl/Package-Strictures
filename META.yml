@@ -25,13 +25,13 @@ name: Package-Strictures
 provides:
   Package::Strictures:
     file: lib/Package/Strictures.pm
-    version: '1.000001'
+    version: '1.000002'
   Package::Strictures::Register:
     file: lib/Package/Strictures/Register.pm
-    version: '1.000001'
+    version: '1.000002'
   Package::Strictures::Registry:
     file: lib/Package/Strictures/Registry.pm
-    version: '1.000001'
+    version: '1.000002'
 requires:
   Carp: '0'
   Config::INI::Reader: '0.014'
@@ -44,4 +44,4 @@ resources:
   bugtracker: https://github.com/kentnl/Package-Strictures/issues
   homepage: https://github.com/kentnl/Package-Strictures
   repository: https://github.com/kentnl/Package-Strictures.git
-version: '1.000001'
+version: '1.000002'

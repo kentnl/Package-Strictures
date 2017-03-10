@@ -4,7 +4,7 @@ use warnings;
 
 package Package::Strictures::Registry;
 
-our $VERSION = '1.000001';
+our $VERSION = '1.000002';
 
 # ABSTRACT: Data Storage name-space for stricture parameters.
 
@@ -141,7 +141,7 @@ Package::Strictures::Registry - Data Storage name-space for stricture parameters
 
 =head1 VERSION
 
-version 1.000001
+version 1.000002
 
 =head1 METHODS
 

@@ -4,7 +4,7 @@ use warnings;
 
 package Package::Strictures::Register;
 
-our $VERSION = '1.000001';
+our $VERSION = '1.000002';
 
 # ABSTRACT: Create compile-time constants that can be tweaked by users with Package::Strictures.
 
@@ -121,7 +121,7 @@ Package::Strictures::Register - Create compile-time constants that can be tweake
 
 =head1 VERSION
 
-version 1.000001
+version 1.000002
 
 =head1 AUTHOR
 
