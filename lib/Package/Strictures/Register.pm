@@ -5,7 +5,9 @@ use warnings;
 use utf8;
 
 package Package::Strictures::Register;
-$Package::Strictures::Register::VERSION = '1.000001';
+
+our $VERSION = '1.000001';
+
 # ABSTRACT: Create compile-time constants that can be tweaked by users with Package::Strictures.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
